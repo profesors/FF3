@@ -1,0 +1,117 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}                         % UNICODE
+\usepackage{amsmath}                                % Matemáticas American Mathematical Society
+\usepackage{amssymb}                                % Math symbols
+\usepackage{graphicx}                               % Insertar gráficos
+\usepackage[ddmmyyyy]{datetime}                     %
+\usepackage{bookmark}                               % Links from content index
+\usepackage[spanish, es-nodecimaldot]{babel}        % Corte de las palabras en español
+\usepackage{enumitem}
+\usepackage[titles]{tocloft}                        % Cambiar anchura título en el índice
+\usepackage{siunitx} \sisetup{ output-decimal-marker={,}, quotient-mode=fraction}   % Sistema internacional para unidades con separador decimal
+\protected\def\vectori{\ensuremath{\overrightarrow{i}}}
+\protected\def\vectorj{\ensuremath{\overrightarrow{j}}}
+\protected\def\vectork{\ensuremath{\overrightarrow{k}}}
+\usepackage{fancyhdr}                               % Cabecera de cada página
+\usepackage{titling}                                % Para hacer referencia a \theauthor
+%\hypersetup{hidelinks=true}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = [rgb]{0.2,0.2,0.5}, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
+
+\title{Fundamentos de Física III\\Solución del examen de 2015}
+\date{\today}
+\author{...}
+
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{Ejercicio \arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+
+\pagestyle{fancy}           % Cabecera de cada página
+\fancyhf{}
+\fancyhead[L]{Solución del examen de Fundamentos de Física III de 2015}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+    \begin{titlepage}
+    \pagenumbering{gobble}
+    \maketitle
+    \thispagestyle{empty}
+    \hypersetup{pageanchor=true}
+    \renewcommand*\contentsname{Contenidos}
+    %\vspace{1cm}
+    \tableofcontents
+    \end{titlepage}
+
+
+
+    \newpage
+    \pagenumbering{arabic}
+
+    % Feb 1ª Ejercicio 1 ==========================================
+    \section*{Examen de la 1ª semana de febrero de 2015}
+    \addcontentsline{toc}{section}{Examen de la 1ª semana de febrero de 2015}
+        \subsection{} Una pequeña bacteria con una masa de aproximadamente \SI{10d-14}{\kilo\gram},
+                está confinada entre dos paredes rígidas separadas $L=\SI{0.1}{\milli\metre}$
+        \begin{enumerate}[label=\alph*)]
+        \item Estime su velocidad mínima (cuántica) de desplazamiento. ¿Dado su orden de magnitud,
+            entra el resultado dentro del ámbito clásico o cuántico? Justifique su respuesta
+        \item Si, en vez de ello, su velocidad es de apróximadamente \SI{1}{\milli\metre} cada
+            \SI{100}{\second}, estime el número cuántico de su estado. ¿Dado su orden de magnitud,
+            entra el resultado dentro del ámbito clásico o cuántico? Justifique su respuesta.
+        \end{enumerate}
+
+
+
+        % Feb 1ª Ejercicio 2    ==========================================
+        \subsection{}
+        La resisitividad de la plata, con número atómico $A=\num{108}$, a una temperatura igual
+        a \SI{273}{\kelvin} es \SI{1.5d-8}{\ohm\meter}, su densidad es \SI{10.5d3}{\kilo\gram\meter^-3}
+        y la energía de Fermi es $R_f = \SI{5.5}{\electronvolt}$. Suponiendo que cada átomo contribuye
+        en un electrón a la conducción, calcule cuánto vale el codiente entre el recorrido libre medio
+        y el interespaciado atómico: $\lambda/d$.
+
+
+        % Feb 1ª Ejercicio 3    ==========================================
+        \subsection{}
+        La vida media de los muone en reposo (tiempo propio) es \SI{2.2}{\micro\second}, mientras
+        que la vida media cuando están contenidos en los rayos cósmicos se encuentra que es aproximadamente
+        \SI{15}{\micro\second}. Conteste entonces a las siguientes preguntas:
+        \begin{enumerate}[label=\alph*)]
+        \item ¿Cuál es la velocidad de estos muones procedentes de los rayos cósmicos?
+        \item ¿Cuánta distancia recorrerán antes de desintegrarse en un sistema de referencia
+        en el cual su velocidad de $\num{0.6}c$?
+        \item Compare la distancia del punto anterior con la distancia que el muón "ve"
+        mientras está viajando.
+    \end{enumerate}
+
+
+    % Examen Feb 2ª semana 2015 =============================================
+    % Feb 2ª Ejercicio 1    ==========================================
+    \section*{Examen de la 2ª semana de febrero de 2015}
+    \addcontentsline{toc}{section}{Examen de la 2ª semana de febrero de 2015}
+    \setcounter{subsection}{0}
+    \subsection{}
+    Una bola de \SI{1.0}{\gram} puede rodar libremente dentro de un tubo de longitud $L=\SI{1.0}{\centi\meter}$.
+    El tubo está tapado por ambos extremos. Si modelamos el sistema como un pozo unidimensional infinito:
+    \begin{enumerate}[label=\alph*)]
+        \item Determine el valor del número cuántico $n$ si damos a la bola una energía de \SI{1.0}{\milli\J}.
+        \item Calcule la energía de excitación que hay que proporcionar a la bola para elevarla al siguiente nivel
+        de ebergía.
+        \item Comente los órdenes de magnitud obtenidos en los apartados anteriores.
+    \end{enumerate}
+
+    % Feb 2ª Ejercicio 2    ==========================================
+    \subsection{}
+    Suponga que una molécula diatómica tiene una energía potencial dada por:
+
+    $$U=-\left(\frac{1}{4\pi\epsilon_0}\right)\frac{e^2}{r}+\frac{B}{r^6}$$
+
+    con $B=\SI{1.0d-78}{\J\meter^6}$ donde $r$ es la distancia entre los centros de los dos átomos.
+    Determine la separación de equilibrio esperada de los dos átomos (longitud de enlace de la molécula).
+
+
+\end{document}
