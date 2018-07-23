@@ -15,6 +15,17 @@
 \usepackage{fancyhdr}                               % Cabecera de cada página
 \usepackage{titling}                                % Para hacer referencia a \theauthor
 %\hypersetup{hidelinks=true}
+
+\usepackage{tocloft}
+\setlength{\cftsubsecnumwidth}{5em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
+
+%\@dottedtocline{seclevel}{indent}{numwidth}
+%\renewcommand{\l@kind}{10}
+%\renewcommand{\cftsecafterpnum}{\hspace*{17.5em}}
+%\renewcommand{\cftsubsecafterpnum}{\hspace*{17.5em}}
+
+
+
 \hypersetup{
   colorlinks   = true, %Colours links instead of ugly boxes
   urlcolor     = blue, %Colour for external hyperlinks
@@ -112,6 +123,26 @@
 
     con $B=\SI{1.0d-78}{\J\meter^6}$ donde $r$ es la distancia entre los centros de los dos átomos.
     Determine la separación de equilibrio esperada de los dos átomos (longitud de enlace de la molécula).
+
+
+
+    % Feb 2ª Ejercicio 3    ==========================================
+    \subsection{}
+    La función de onda de un electrón en un átomo de tipo hidrógeno en el estado fundamental
+    expresada en coordenadas esféricas es:
+
+    $$\psi(r)=\frac{1}{\sqrt{\pi a^3}}e^{-r/a}$$
+
+    donde r es la coordenada radial, $a=a_0/Z$ y $a_0\simeq\SI{0.5}{\angstrom}$ es el radio de Bohr
+    (la carga del núcleo $Z_e$ y el átomo solo incluye un electrón). Si el número total de
+    nucleones es $A=173$ y el número atómico es $Z=70$:
+    \begin{enumerate}[label=\alph*)]
+        \item ¿Cuál es la probabilidad de que el electrón esté en el núcleo?
+        \item Exprese el resultado anterior en función del número total de nucleones A.
+        \item Sustituya valores y obtenga el valor numérico de esta propiedad.
+    \end{enumerate}
+    \textbf{Ayuda:} A la hora de calcular la integral, realice una aproximación teniendo en cuenta
+    que $R<<\alpha$ en el interior del núcleo ($R$ es el radio del núcleo).
 
 
 \end{document}
