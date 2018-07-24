@@ -13,11 +13,13 @@ $ pdflatex FF3_2015_Resuelto.tex
 
 y obtendrás un documento en formato PDF.
 
-2. Yo por mi parte he creado un directorio llamado `aux` y empleo desde el terminal:
+2. El segundo método es el que yo utilizo. He creado
+en el directorio de trabajo local de este repositorio un directorio
+llamado `aux` donde vuelco los archivos temporales y el PDF final que
+genera pdflatex, así pues desde el terminal:
 
 ```
 $ clear && pdflatex --output-directory=aux FF3_2015_Resuelto.tex
 ```
 
-De esta manera todos los archivos intermedios que genera LaTex quedarán en el directorio
-`aux` además del PDF.
+Recuerda que en el directorio `aux` quedará el PDF final para distibuir.
