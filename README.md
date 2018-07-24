@@ -1,2 +1,2 @@
 # FF3
-Soluciones de los exámenes de fundamentos de física 3 de la UNED
+Soluciones de los exámenes de Fndamentos de Física 3 de la UNED
