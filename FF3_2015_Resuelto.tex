@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt, a4paper]{article}
 \usepackage[utf8]{inputenc}                         % UNICODE
 \usepackage{amsmath}                                % Matemáticas American Mathematical Society
 \usepackage{amssymb}                                % Math symbols
@@ -16,26 +16,30 @@
 \usepackage{titling}                                % Para hacer referencia a \theauthor
 %\hypersetup{hidelinks=true}
 
+
 \usepackage{tocloft}
 \setlength{\cftsubsecnumwidth}{5em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
 
-%\@dottedtocline{seclevel}{indent}{numwidth}
-%\renewcommand{\l@kind}{10}
-%\renewcommand{\cftsecafterpnum}{\hspace*{17.5em}}
-%\renewcommand{\cftsubsecafterpnum}{\hspace*{17.5em}}
-
-
+\title{Fundamentos de Física III \\ Solución del examen de 2015}
+\date{\today}
+\author{Samuel Gómez}
 
 \hypersetup{
   colorlinks   = true, %Colours links instead of ugly boxes
   urlcolor     = blue, %Colour for external hyperlinks
   linkcolor    = [rgb]{0.2,0.2,0.5}, %Colour of internal links
-  citecolor   = red %Colour of citations
+  citecolor   = red, %Colour of citations
+  pdfstartview = FitBH,
+  pdfpagelayout = TwoColumnLeft,
+  pdfinfo = {
+    Title = {\thetitle},
+    Author = {\theauthor},
+    Subject = {Problemas de Física Moderna},
+    Keywords = {Física, UNED, Fundamentos de Física III}
+    },
+  pdfproducer={LaTeX},
+  pdfcreator={pdfLaTeX}
 }
-
-\title{Fundamentos de Física III\\Solución del examen de 2015}
-\date{\today}
-\author{...}
 
 \renewcommand{\thesection}{}
 \renewcommand{\thesubsection}{Ejercicio \arabic{subsection}}
@@ -80,7 +84,7 @@
         donde su velocidad mínima será su estado de mínima energía. Por una parte su estado de mínima energía
         es
         \begin{equation}    \label{eq:E_min_caja_unidimensional_infinita}
-            E_{m\acute{\i}n}=\frac{h^2}{8mL^2}
+            E_{m\acute{\i}n} = E_1 =\frac{h^2}{8mL^2}
         \end{equation}
         Por otra parte, podemos hallar su velocidad mínima despejando la
         velocidad a partir de la expresión de la energía cinética $E=\frac{1}{2}mv^2$ quedando así:
@@ -91,12 +95,44 @@
         obtenemos:
         $$
             v_{m\acute{\i}n}=\sqrt{\frac{2\frac{h^2}{8mL^2}}{m}} = \frac{h}{2mL} =
-            \frac{h}{\num{2} \cdot \num{10d-14} \cdot \num{0.1d-3}} = \SI{3.313d-17}{\metre\second^{-1}}
+            \frac{h}{\num{2} \cdot \num{10d-14} \cdot \num{0.1d-3}} = \SI{3.313d-17}{\metre\cdot\second^{-1}}
         $$
-        Es una velocidad muy baja debido a que la bacteria pertenece al mundo de la física clásica
-        no de la física cuántica
+        Es una velocidad muy baja debido a que la bacteria pertenece al mundo de la Física Clásica
+        no de la Física Cuántica
 
-        \paragraph{b)} 
+        \paragraph{b)} La velocidad $v$ indicada en el enunciado es de \SI{1}{\milli\meter} cada \SI{100}{\second}, esto
+        es \SI{100}{\micro\meter\cdot\second^{-1}} así pues buscamos su estádo energético que depende de su energía cinética.
+
+        \begin{equation} \label{eq:energia_cinetica}
+            E_c = E_n = \frac{1}{2}mv^2
+        \end{equation}
+
+        pero también ocurre que disponemos de otra fórmula para
+        obtener la energía en el enésimo estado cuántico:
+
+        \begin{equation}    \label{eq:estado_cuantico}
+            E_n = n^2 \cdot E_1
+        \end{equation}
+
+        Igualamos las ecuaciones \ref{eq:energia_cinetica} y \ref{eq:estado_cuantico} y
+        sustituimos $E_1$ por la ecuación \ref{eq:E_min_caja_unidimensional_infinita}
+
+        \begin{equation*}
+            E_n = \frac{1}{2}mv^2 = n^2 E_1 = n^2 \frac{h^2}{8mL^2}
+        \end{equation*}
+
+        De esta igualdad nos quedamos con el segundo y cuarto miembro.
+        Finalmente despejamos $n$ para obtener:
+
+        \begin{equation}
+            n = \frac{2mvL}{h} = \frac{\num{2}\cdot\num{10d-14}\cdot\num{100d-6}\cdot\num{0.1d-3}}{h} \approx \num{3d12}
+        \end{equation}
+
+        Se trata de un estado cuántico muy elevado, tal y como esperabamos puesto que la bacteria pertenece a la
+        Física Clásica y no a la Física Cuántica
+
+
+
 
 
         % Feb 1ª Ejercicio 2    ==========================================
@@ -164,7 +200,7 @@
         \item Sustituya valores y obtenga el valor numérico de esta propiedad.
     \end{enumerate}
     \textbf{Ayuda:} A la hora de calcular la integral, realice una aproximación teniendo en cuenta
-    que $R<<\alpha$ en el interior del núcleo ($R$ es el radio del núcleo).
+    que $R\ll\alpha$ en el interior del núcleo ($R$ es el radio del núcleo).
 
 
     % Examen Sept  2016 =============================================
