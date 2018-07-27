@@ -20,7 +20,7 @@
 \usepackage{tocloft}
 \setlength{\cftsubsecnumwidth}{5em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
 
-\title{Fundamentos de Física III \\ Solución del examen de 2015}
+\title{Fundamentos de Física III \\ Soluciones de exámenes curso 2015-2016}
 \date{\today}
 \author{Samuel Gómez \\ profesor\_s@outlook.com}
 
@@ -47,7 +47,7 @@
 
 \pagestyle{fancy}           % Cabecera de cada página
 \fancyhf{}
-\fancyhead[L]{Solución del examen de Fundamentos de Física III de 2015}
+\fancyhead[C]{Fundamentos de Física III. Soluciones de exámenes curso 2015-2016}
 \fancyfoot[C]{\thepage}
 
 \begin{document}
@@ -138,10 +138,45 @@
         % Feb 1ª Ejercicio 2    ==========================================
         \subsection{}
         La resisitividad de la plata, con número atómico $A=\num{108}$, a una temperatura igual
-        a \SI{273}{\kelvin} es \SI{1.5d-8}{\ohm\meter}, su densidad es \SI{10.5d3}{\kilo\gram\meter^-3}
-        y la energía de Fermi es $R_f = \SI{5.5}{\electronvolt}$. Suponiendo que cada átomo contribuye
-        en un electrón a la conducción, calcule cuánto vale el codiente entre el recorrido libre medio
+        a \SI{273}{\kelvin} es \SI{1.5d-8}{\ohm\meter}, su densidad es \SI{10.5d3}{\kilo\gram\cdot\meter^{-3}}
+        y la energía de Fermi es $E_f = \SI{5.5}{\electronvolt}$. Suponiendo que cada átomo contribuye
+        en un electrón a la conducción, calcule cuánto vale el cociente entre el recorrido libre medio
         y el interespaciado atómico: $\lambda/d$.
+
+        \textbf{Solución:}
+        \paragraph{} Calculemos el número de átomos por metro cuadrado teniendo en cuenta que la densidad
+        debe ser dada en gramos por metro cúbico:
+
+        \begin{equation*}
+            n = \frac{N_A}{A}\cdot densidad = \frac{N_a}{108}\cdot\num{10.5d6} = \num{5.854d28} \mbox{átomos}
+        \end{equation*}
+
+        Ahora hallaremos la distancia entre átomos\footnote{Emplearemos la
+        notación $d_{distancia}$ para no confundir con $d$ de densidad} $d = d_{distancia}$
+        mediante la fórmula $d_{distancia}^3 = 1/n_{\acute{a}tomos}$.
+
+        \begin{equation}    \label{eq:d_distancia1.2}
+            d_{distancia} = d = \sqrt[3]{\frac{1}{n_{\acute{a}tomos}}} = \sqrt[3]{\frac{108}{N_A\cdot \mbox{densidad}}}
+            = \SI{2.5753}{\angstrom}
+        \end{equation}
+
+        Finalmente debemos hallar $\lambda$ y la obtenemos despejando de la fórmula de la resistencia:
+        $$\rho = \frac{m_e v_m}{n_e e^2 \lambda} \Rightarrow \lambda = \frac{m_e v_m}{n_e e^2 \rho}$$
+
+        \begin{equation}    \label{eq:lambda_1.2}
+            \lambda = \frac{m_e\sqrt{\frac{2E_f}{m_e}}}{n_e e^2 \rho} = \frac{\sqrt{2 E_f m_e}}{n_e e^2 \rho}
+            = \SI{56.2124}{\nano\meter}
+        \end{equation}
+
+        La relación que nos piden es $\frac{\lambda}{d_{distancia}}$ y esta se obtiene de las ecuaciones
+        \ref{eq:d_distancia1.2} y \ref{eq:lambda_1.2} quedando así:
+
+        \begin{equation*}
+            \frac{\lambda}{d_{distancia}} = \frac{\SI{56.2123}{\nano\meter}}{\SI{0.25753}{\nano\meter}}
+            = \num{218.2747}
+        \end{equation*}
+
+
 
 
         % Feb 1ª Ejercicio 3    ==========================================
