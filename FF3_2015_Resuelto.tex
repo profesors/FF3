@@ -83,7 +83,7 @@
             entra el resultado dentro del ámbito clásico o cuántico? Justifique su respuesta.
         \end{enumerate}
 
-        \textbf{Solución}
+        \paragraph{\textbf{Solución}}
         \paragraph {a)} Se trata de un problema de ecuación de Schrödinger aplicado a un pozo unidimensional infinito
         donde su velocidad mínima será su estado de mínima energía. Por una parte su estado de mínima energía
         es
@@ -147,7 +147,7 @@
         en un electrón a la conducción, calcule cuánto vale el cociente entre el recorrido libre medio
         y el interespaciado atómico: $\lambda/d$.
 
-        \textbf{Solución}
+        \paragraph{\textbf{Solución}}
         \paragraph{} Calculemos el número de átomos por metro cuadrado teniendo en cuenta que la densidad
         debe ser dada en gramos por metro cúbico:
 
@@ -196,7 +196,7 @@
         mientras está viajando.
         \end{enumerate}
 
-        \textbf{Solución}
+        \paragraph{\textbf{Solución}}
         \paragraph{a)} Para un observador en reposo la vida de un muón parece transcurrir a cámara lenta. Esta es
         la razón por la que el tiempo de desintegración será mayor para un observador estático.
         El tiempo se dilata en un factor $\gamma$. Sea $\tau_0 = \SI{15}{\micro\second}$ la vida
@@ -248,9 +248,48 @@
     \begin{enumerate}[label=\alph*)]
         \item Determine el valor del número cuántico $n$ si damos a la bola una energía de \SI{1.0}{\milli\J}.
         \item Calcule la energía de excitación que hay que proporcionar a la bola para elevarla al siguiente nivel
-        de ebergía.
+        de energía.
         \item Comente los órdenes de magnitud obtenidos en los apartados anteriores.
     \end{enumerate}
+
+    \paragraph{\textbf{Solución}}
+    \paragraph{a)} Antes de calcular el enésimo estado es necesario calcular el pimero que es el estado
+    de mínima energía $E_1$
+
+    $$E_1=\frac{h^2}{8mL^2} = \frac{h^2}{8\cdot\num{10d-3}\cdot\num{10d-2}} = \SI{5.488d28}{\J} = \SI{3.4254d-42}{\electronvolt}$$
+
+    Ahora podemos aplicar la fórmula. Despejamos la $n$ de $E_n = n^2 E_1$ y obtenemos:
+
+    $$n = \sqrt{\frac{E_n}{E_1}} = \sqrt{\frac{\num{10d-3}}{\num{5.488d-61}}} = \num{4.2687d28}$$
+
+    Sin duda, se trata de un estado cuántico muy alto, como era previsible ya que la bola de la
+    que trata el problema no es un objeto cuántico sino clásico.
+
+    \paragraph{b)} El siguiente nivel de energía corresponderá al estado $n+1$ para calcularlo
+
+    $$\Delta E = E_{n+1}-E_n = (n+1)^2 E_1 - n^2 E_1=
+    E_1(n^2+1+2n-n^2) $$
+    Simplificamos y seguimos
+    $$E_1(2n+1) = E_1\left(2 \sqrt{\frac{E_n}{E_1}}+1\right) = 2\sqrt{E_nE_1}+E_1$$
+
+    Sea $E_n = \SI{10d-3}{\J}$ la energía aportada según el enunciado y $E_1$ el valor
+    obtenido en el primer apartado de este ejercicio reemplazamos la expresión obtenida
+    por los valores numéricos:
+
+    $$\Delta E = 2 \sqrt{\num{10d-3} \cdot \num{5.488d-61}} + \num{5.488d-61}$$
+
+    Y finalmente obtenemos la energía que habría que aportar para pasar al siguiente
+    estado cuántico:
+
+    $$\Delta E = \SI{4.6853d-32}{\J} = \SI{2.93d-13}{\electronvolt}$$
+
+    \paragraph{c)} Se trata de estádos cuánticos muy elevados y diferencias energéticas muy
+    bajas propias de objetos no relativistas
+
+
+
+
+
 
     % Feb 2ª Ejercicio 2    ==========================================
     \subsection{}
@@ -312,7 +351,7 @@
         \item La máxima longitud de onda del fotón que rompería el par de Cooper en el In.
     \end{enumerate}
 
-    \textbf{Solución}
+    \paragraph{\textbf{Solución}}
     \paragraph{a)} La solución para hallar el gap que nos piden es de aplicación directa. Simplemente hay
     que sustituir en la fórmula
 
