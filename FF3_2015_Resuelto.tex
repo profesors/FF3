@@ -1,5 +1,6 @@
 \documentclass[12pt, a4paper]{article}
 \usepackage[utf8]{inputenc}                         % UNICODE
+%\usepackage[T1]{fontenc}                            % Para que mi correo que tiene _ barra baja funcione al pinchar sobre él
 \usepackage{amsmath}                                % Matemáticas American Mathematical Society
 \usepackage{amssymb}                                % Math symbols
 \usepackage{graphicx}                               % Insertar gráficos
@@ -22,11 +23,15 @@
 
 \title{Fundamentos de Física III \\ Soluciones de exámenes curso 2015-2016}
 \date{\today}
-\author{Samuel Gómez \\ profesor\_s@outlook.com}
+\author{
+    Samuel Gómez Fernández \\ \href{mailto:profesor_s@outlook.com}{profesor\_s@outlook.com}
+    \and
+    Manuel González Gálvez \\ \href{mailto:galvez29@gmail.com}{galvez29@gmail.com}
+    }
 
 \hypersetup{
   colorlinks   = true, %Colours links instead of ugly boxes
-  urlcolor     = blue, %Colour for external hyperlinks
+  urlcolor     = [rgb]{0.2,0.2,0.5}, %Colour for external hyperlinks
   linkcolor    = [rgb]{0.2,0.2,0.5}, %Colour of internal links
   citecolor   = red, %Colour of citations
   pdfstartview = FitBH,
@@ -143,7 +148,7 @@
         en un electrón a la conducción, calcule cuánto vale el cociente entre el recorrido libre medio
         y el interespaciado atómico: $\lambda/d$.
 
-        \textbf{Solución:}
+        \textbf{Solución}
         \paragraph{} Calculemos el número de átomos por metro cuadrado teniendo en cuenta que la densidad
         debe ser dada en gramos por metro cúbico:
 
@@ -151,7 +156,7 @@
             n = \frac{N_A}{A}\cdot densidad = \frac{N_a}{108}\cdot\num{10.5d6} = \num{5.854d28} \mbox{átomos}
         \end{equation*}
 
-        Ahora hallaremos la distancia entre átomos\footnote{Emplearemos la
+        Ahora hallaremos la distancia entre átomos\footnote{Emplearemo la
         notación $d_{distancia}$ para no confundir con $d$ de densidad} $d = d_{distancia}$
         mediante la fórmula $d_{distancia}^3 = 1/n_{\acute{a}tomos}$.
 
@@ -181,7 +186,7 @@
 
         % Feb 1ª Ejercicio 3    ==========================================
         \subsection{}
-        La vida media de los muone en reposo (tiempo propio) es \SI{2.2}{\micro\second}, mientras
+        La vida media de los muones en reposo (tiempo propio) es \SI{2.2}{\micro\second}, mientras
         que la vida media cuando están contenidos en los rayos cósmicos se encuentra que es aproximadamente
         \SI{15}{\micro\second}. Conteste entonces a las siguientes preguntas:
         \begin{enumerate}[label=\alph*)]
@@ -190,7 +195,41 @@
         en el cual su velocidad de $\num{0.6}c$?
         \item Compare la distancia del punto anterior con la distancia que el muón "ve"
         mientras está viajando.
-    \end{enumerate}
+        \end{enumerate}
+
+        \textbf{Solución}
+        \paragraph{a)} Para un observador en reposo la vida de un muón parece transcurrir a cámara lenta. Esta es
+        la razón por la que el tiempo de desintegración será mayor para un observador estático.
+        El tiempo se dilata en un factor $\gamma$. Sea $\tau_0 = \SI{15}{\micro\second}$ la vida
+        media en reposo y $\tau = \SI{2.2}{\micro\second}$ la vida media en movimiento tenemos la
+        relación $\tau_0 = \gamma \cdot \tau$, desarrollando $\gamma$ tenemos:
+
+        $$\tau_0 = \frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}$$
+
+        Nos piden la velocidad luego debemos despejamos v quedando así:
+
+
+        $$v = c \cdot \sqrt{1-\left(\frac{\tau}{\tau_0}\right)^2} = c \cdot \sqrt{1-\left(\frac{11}{75}\right)^2} = \num{0.989}\cdot c$$
+
+        que es la velocidad que pedían.
+
+        \paragraph{b)} La distancia se puede obtener despejando $s$ de la ecuación $v=\frac{s}{t}$:
+
+        $$s=v\cdot t = \num{0.6}\cdot c \cdot \SI{15}{\micro\second} = \SI{2700}{m}$$
+
+        \paragraph{c)} Para el muón la longitud a altas velocidades se contrae según el \mbox{factor $\gamma$}
+        $$\gamma = \frac{1}{\sqrt{1-\left(\frac{\num{0.6}\cdot c}{c}\right)^2}} = \frac{5}{4}$$
+
+        Por otra parte, la expresión $l_0=\gamma l$ relaciona la longitud en reposo $l_0$ y la longitud para
+        un observador que se mueve a velocidades relativistas $l$. Sustituimos $\gamma$ por el resultado
+        obtenido y obtenemos:
+        $$l=\frac{1}{\gamma}\cdot l_0 = \frac{4}{5} \cdot 2700 = \SI{2160}{\meter}$$
+
+        que resulta ser $\num{0.8}$ veces inferior a la obtenida en el apartado anterior.
+
+
+
+
 
 
     % Examen Feb 2ª semana 2015 =============================================
@@ -261,12 +300,25 @@
 
     % Sept 2016 Ejercicio 3    ==========================================
     \subsection{}
-    El In (indio) como superconductor tiene una temperatura crírica ${T_c=\SI{3.4}{\kelvin}}$. Calcule
+    El In (indio) como superconductor tiene una temperatura crítica ${T_c=\SI{3.4}{\kelvin}}$. Calcule
     lo siguiente:
     \begin{enumerate}[label=\alph*)]
         \item El gap de energía del superconductor según la teoría BCS
         \item La máxima longitud de onda del fotón que rompería el par de Cooper en el In.
     \end{enumerate}
+
+    \textbf{Solución}
+    \paragraph{a)} La solución para hallar el gap que nos piden es de aplicación directa. Simplemente hay
+    que sustituir en la fórmula
+
+    $$E_g=\frac{7}{2} k_b T_c = \SI{1.64d-22}{\J} = \SI{1.025}{\milli\electronvolt}$$
+
+    \paragraph{b)} Para la energía obtenida en el apartado anterior debemos obtener la longitud
+    de onda correspondiente a partir de $E=h\cdot f = \frac{h c}{\lambda}$
+
+    $$\lambda = \frac{h c}{\num{1.64d-22}} = \SI{1.21d-3}{\meter}$$
+
+
 
 
     % Sept 2016 Ejercicio 4    ==========================================
