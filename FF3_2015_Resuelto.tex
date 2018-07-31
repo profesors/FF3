@@ -9,18 +9,20 @@
 \usepackage{enumitem}
 \usepackage[titles]{tocloft}                        % Cambiar anchura título en el índice
 \usepackage{siunitx} \sisetup{ output-decimal-marker={,}, quotient-mode=fraction}   % Sistema internacional para unidades con separador decimal
+\usepackage[a4paper]{geometry}
 \protected\def\vectori{\ensuremath{\overrightarrow{i}}}
 \protected\def\vectorj{\ensuremath{\overrightarrow{j}}}
 \protected\def\vectork{\ensuremath{\overrightarrow{k}}}
 \usepackage{fancyhdr}                               % Cabecera de cada página
 \usepackage{titling}                                % Para hacer referencia a \theauthor
 %\hypersetup{hidelinks=true}
-
-
 \usepackage{tocloft}
+\setlength{\cftsecnumwidth}{2em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
 \setlength{\cftsubsecnumwidth}{5em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
+\setlength{\cftsubsecindent}{3em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
 
-\title{Fundamentos de Física III \\ Soluciones de exámenes curso 2015-2016}
+
+\title{Fundamentos de Física III \\ Soluciones exámenes curso 2015-2016}
 \date{\today}
 \author{
     Samuel Gómez Fernández \\ \href{mailto:samuel@geniodelmal.es}{samuel@geniodelmal.com}
@@ -34,7 +36,6 @@
   linkcolor    = [rgb]{0.2,0.2,0.5}, %Colour of internal links
   citecolor   = red, %Colour of citations
   pdfstartview = FitBH,
-  pdfpagelayout = TwoColumnLeft,
   pdfinfo = {
     Title = {\thetitle},
     Author = {\theauthor},
@@ -42,38 +43,60 @@
     Keywords = {Física, UNED, Fundamentos de Física III}
     },
   pdfproducer={LaTeX},
-  pdfcreator={pdfLaTeX}
+  pdfcreator={pdfLaTeX},
+  pdfpagemode=UseOutlines
 }
 
-\renewcommand{\thesection}{}
+\renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{Ejercicio \arabic{subsection}}
 \renewcommand{\thesubsubsection}{\alph{subsubsection}}
 
 \pagestyle{fancy}           % Cabecera de cada página
 \fancyhf{}
-\fancyhead[C]{Fundamentos de Física III. Soluciones de exámenes curso 2015-2016}
+\fancyhead[C]{Fundamentos de Física III. Soluciones exámenes curso 2015-2016}
 \fancyfoot[C]{\thepage}
 
 \begin{document}
+    \newgeometry{top=1cm}
     \begin{titlepage}
     \pagenumbering{gobble}
     \maketitle
     \thispagestyle{empty}
     \hypersetup{pageanchor=true}
     \renewcommand*\contentsname{Contenidos}
-    %\vspace{1cm}
+
+    %\vspace{0.7cm}
     \tableofcontents
+
+    \vspace{1cm}
+    \begin{abstract}
+        Uno de los problemas a los que nos enfrentamos los alumnos universitarios
+        en general y de la UNED en particular es la de conseguir exámenes resueltos
+        que nos permitan orientarnos en la titánica tarea de preparar una asignatura.
+
+        La cantidad de temario y de ejercicios que la bibliografía básica ofrece es
+        virtualmente imposible de abarcar en un cuatrimestre teniendo así el alumno
+        la misión de encontrar un faro que ilumine su camino en la búsqueda del modelo
+        de examen al que se enfrentará.
+
+        Preparando esta asignatura nos dimos cuenta de que no estaban disponibles todos los
+        exámenes resueltos, de tal manera que tomando el consejo del divulgador
+        Javier Santaolalla\footnote{\href{https://twitter.com/jasantaolalla}{@JaSantaolalla}} nos lanzamos en grupo a resolver los exámenes que tienes
+        en tus manos. Sean estas páginas las estrellas que te guíen en tu viaje
+        hacia el éxito en tus estudios.
+    \end{abstract}
     \end{titlepage}
 
 
 
-    \newpage
+    %\newpage
     \pagenumbering{arabic}
+    \restoregeometry
 
     % Feb 1ª Ejercicio 1 ==========================================
-    \section*{Examen de la 1ª semana de febrero de 2015}
-    \addcontentsline{toc}{section}{Examen de la 1ª semana de febrero de 2015}
-        \subsection{} Una pequeña bacteria con una masa de aproximadamente \SI{10d-14}{\kilo\gram},
+    \section{Examen 1ª semana de febrero de 2015}
+    %\addcontentsline{toc}{section}{Examen de la 1ª semana de febrero de 2015}
+        \subsection{Bacteria cuántica} Una pequeña bacteria con una masa de aproximadamente \SI{10d-14}{\kilo\gram},
                 está confinada entre dos paredes rígidas separadas $L=\SI{0.1}{\milli\metre}$
         \begin{enumerate}[label=\alph*)]
         \item Estime su velocidad mínima (cuántica) de desplazamiento. ¿Dado su orden de magnitud,
@@ -82,6 +105,7 @@
             \SI{100}{\second}, estime el número cuántico de su estado. ¿Dado su orden de magnitud,
             entra el resultado dentro del ámbito clásico o cuántico? Justifique su respuesta.
         \end{enumerate}
+
 
         \paragraph{\textbf{Solución}}
         \paragraph {a)} Se trata de un problema de ecuación de Schrödinger aplicado a un pozo unidimensional infinito
@@ -140,7 +164,7 @@
 
 
         % Feb 1ª Ejercicio 2    ==========================================
-        \subsection{}
+        \subsection{Electrones en la plata}
         La resisitividad de la plata, con número atómico $A=\num{108}$, a una temperatura igual
         a \SI{273}{\kelvin} es \SI{1.5d-8}{\ohm\meter}, su densidad es \SI{10.5d3}{\kilo\gram\cdot\meter^{-3}}
         y la energía de Fermi es $E_f = \SI{5.5}{\electronvolt}$. Suponiendo que cada átomo contribuye
@@ -184,7 +208,7 @@
 
 
         % Feb 1ª Ejercicio 3    ==========================================
-        \subsection{}
+        \subsection{Muones fugaces}
         La vida media de los muones en reposo (tiempo propio) es \SI{2.2}{\micro\second}, mientras
         que la vida media cuando están contenidos en los rayos cósmicos se encuentra que es aproximadamente
         \SI{15}{\micro\second}. Conteste entonces a las siguientes preguntas:
@@ -239,10 +263,10 @@
 
     % Examen Feb 2ª semana 2015 =============================================
     % Feb 2ª Ejercicio 1    ==========================================
-    \section*{Examen de la 2ª semana de febrero de 2015}
-    \addcontentsline{toc}{section}{Examen de la 2ª semana de febrero de 2015}
+    \section{Examen 2ª semana de febrero de 2015}
+    %\addcontentsline{toc}{section}{Examen de la 2ª semana de febrero de 2015}
     \setcounter{subsection}{0}
-    \subsection{}
+    \subsection{Bola cuántica}
     Una bola de \SI{1.0}{\gram} puede rodar libremente dentro de un tubo de longitud $L=\SI{1.0}{\centi\meter}$.
     El tubo está tapado por ambos extremos. Si modelamos el sistema como un pozo unidimensional infinito:
     \begin{enumerate}[label=\alph*)]
@@ -292,7 +316,7 @@
 
 
     % Feb 2ª Ejercicio 2    ==========================================
-    \subsection{}
+    \subsection{Molécula diatómica}
     Suponga que una molécula diatómica tiene una energía potencial dada por:
 
     $$U=-\left(\frac{1}{4\pi\epsilon_0}\right)\frac{e^2}{r}+\frac{B}{r^6}$$
@@ -303,7 +327,7 @@
 
 
     % Feb 2ª Ejercicio 3    ==========================================
-    \subsection{}
+    \subsection{Función de onda rebelde}
     La función de onda de un electrón en un átomo de tipo hidrógeno en el estado fundamental
     expresada en coordenadas esféricas es:
 
@@ -323,10 +347,10 @@
 
     % Examen Sept  2016 =============================================
     % Sept 2016 Ejercicio 1    ==========================================
-    \section*{Examen de septiembre de 2016}
-    \addcontentsline{toc}{section}{Examen de septiembre de 2016}
+    \section{Examen de septiembre de 2016}
+    %\addcontentsline{toc}{section}{Examen de septiembre de 2016}
     \setcounter{subsection}{0}
-    \subsection{}
+    \subsection{Energía potencial de la partícula}
     Una partícula de masa $m$ y energía total nula tiene una función de onda estacionaria
     definida por
 
@@ -335,15 +359,15 @@
 
 
     % Sept 2016 Ejercicio 2    ==========================================
-    \subsection{}
+    \subsection{Electrones apantallados}
     Los electrónes más externos de un átomo detectan un núcleo protegido o "apantallado"
-    debido a lainfluencia de los electrónes intermedios. La atracción del núcleo se modela
+    debido a la influencia de los electrónes intermedios. La atracción del núcleo se modela
     entonces usando un átomo de tipo hidrógeno con número atómico efectivo $Z'$. Sea entonces
     un electrón externo del átomo de sodio que ocupa el nivel atómico 3s y cuya energía
     de ionización es \SI{5.14}{\electronvolt}. Obtenga el valor de $Z'$ para ese electrón del sodio.
 
     % Sept 2016 Ejercicio 3    ==========================================
-    \subsection{}
+    \subsection{Indio}
     El In (indio) como superconductor tiene una temperatura crítica ${T_c=\SI{3.4}{\kelvin}}$. Calcule
     lo siguiente:
     \begin{enumerate}[label=\alph*)]
@@ -366,7 +390,7 @@
 
 
     % Sept 2016 Ejercicio 4    ==========================================
-    \subsection{}
+    \subsection{Procesos de desintegración}
     De los dos procesos de desintegración siguientes, decida cuál es posible y por qué
     (tenga en cuenta carga, número léptonico y número bariónico). Especifique a través
     de qué interacción se produce ese proceso.
