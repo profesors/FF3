@@ -1,4 +1,5 @@
 \documentclass[12pt, a4paper]{article}
+\usepackage[T1]{fontenc}                            % Permite copiar caractéres unicode desde el PDF al portapapeles
 \usepackage[utf8]{inputenc}                         % UNICODE
 \usepackage{amsmath}                                % Matemáticas American Mathematical Society
 \usepackage{amssymb}                                % Math symbols
@@ -89,8 +90,9 @@
         de examen al que se enfrentará.
 
         Preparando esta asignatura nos dimos cuenta de que no estaban disponibles todos los
-        exámenes resueltos, de tal manera que tomando el consejo del divulgador
-        Javier Santaolalla\footnote{\href{https://twitter.com/jasantaolalla}{@JaSantaolalla}}
+        exámenes resueltos, de tal manera que tomando el
+        consejo\footnote{\href{https://youtu.be/IRwrAMdpd18}{https://youtu.be/IRwrAMdpd18}} del divulgador
+        Javier Santaolalla\footnote{Twitter \href{https://twitter.com/jasantaolalla}{@JaSantaolalla}}
         para preparar exámenes nos lanzamos a resolver los problemas que tienes
         en tus manos. Sean estas páginas las estrellas que te guíen en tu viaje
         hacia el éxito en tus estudios.
@@ -106,7 +108,7 @@
     % Feb 1ª Ejercicio 1 ==========================================
     \section{Examen 1ª semana de febrero de 2015}
     %\addcontentsline{toc}{section}{Examen de la 1ª semana de febrero de 2015}
-        \subsection{Bacteria cuántica} Una pequeña bacteria con una masa de aproximadamente \SI{10d-14}{\kilo\gram},
+        \subsection{Bacteria cuántica} Una pequeña bacteria con una masa de aproximadamente \SI{10d-14}{\kilo\gram}
                 está confinada entre dos paredes rígidas separadas $L=\SI{0.1}{\milli\metre}$
         \begin{enumerate}[label=\alph*)]
         \item Estime su velocidad mínima (cuántica) de desplazamiento. ¿Dado su orden de magnitud,
@@ -122,24 +124,24 @@
         donde su velocidad mínima será su estado de mínima energía. Por una parte su estado de mínima energía
         es
         \begin{equation}    \label{eq:E_min_caja_unidimensional_infinita}
-            E_{m\acute{\i}n} = E_1 =\frac{h^2}{8mL^2}
+            E_{m\acute{\dotlessi}n} = E_1 =\frac{h^2}{8mL^2}
         \end{equation}
         Por otra parte, podemos hallar su velocidad mínima despejando la
         velocidad a partir de la expresión de la energía cinética $E=\frac{1}{2}mv^2$ quedando así:
         \begin{equation}    \label{eq:vel_min_desde_energia_cinetica}
-            v_{m\acute{\i}n}=\sqrt{\frac{2E_{m\acute{\i}n}}{m}}
+            v_{m\acute{\dotlessi}n}=\sqrt{\frac{2E_{m\acute{\dotlessi}n}}{m}}
         \end{equation}
         Sustituyendo la ecuación \ref{eq:E_min_caja_unidimensional_infinita} en la ecuación \ref{eq:vel_min_desde_energia_cinetica}
         obtenemos:
         $$
-            v_{m\acute{\i}n}=\sqrt{\frac{2\frac{h^2}{8mL^2}}{m}} = \frac{h}{2mL} =
+            v_{m\acute{\dotlessi}n}=\sqrt{\frac{2\frac{h^2}{8mL^2}}{m}} = \frac{h}{2mL} =
             \frac{h}{\num{2} \cdot \num{10d-14} \cdot \num{0.1d-3}} = \SI{3.313d-17}{\metre\cdot\second^{-1}}
         $$
         Es una velocidad muy baja debido a que la bacteria pertenece al mundo de la Física Clásica
         no de la Física Cuántica
 
         \paragraph{b)} La velocidad $v$ indicada en el enunciado es de \SI{1}{\milli\meter} cada \SI{100}{\second}, esto
-        es \SI{100}{\micro\meter\cdot\second^{-1}} así pues buscamos su estádo energético que depende de su energía cinética.
+        es \SI{1}{\micro\meter\cdot\second^{-1}} así pues buscamos su estádo energético que depende de su energía cinética.
 
         \begin{equation} \label{eq:energia_cinetica}
             E_c = E_n = \frac{1}{2}mv^2
@@ -162,7 +164,7 @@
         De esta igualdad nos quedamos con el segundo y cuarto miembro.
         Finalmente despejamos $n$ para obtener:
 
-        $$ n = \frac{2mvL}{h} = \frac{\num{2}\cdot\num{10d-14}\cdot\num{100d-6}\cdot\num{0.1d-3}}{h} \approx \num{3d12} $$
+        $$ n = \frac{2mvL}{h} = \frac{\num{2}\cdot\num{10d-14}\cdot\num{1d-6}\cdot\num{0.1d-3}}{h} \approx \num{3d10} $$
 
         Se trata de un estado cuántico muy elevado, tal y como esperabamos puesto que la bacteria pertenece a la
         Física Clásica y no a la Física Cuántica
