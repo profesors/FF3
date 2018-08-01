@@ -1,25 +1,39 @@
 # Fundamentos de Física 3
 Soluciones de los exámenes de Fundamentos de Física 3 de la UNED
 
-## Convertir el archivo de LaTex a PDF
+## Convertir el archivo de LaTex a PDF de manera automática
 
-Para ello hay dos métodos:
-
-1. El primero es más sencillo. Desde el terminal:
+Simplemente ejecuta desde el terminal:
 
 ```
-$ pdflatex FF3_2015_Resuelto.tex
+$ ./make
 ```
 
-y obtendrás un documento en formato PDF.
+Así se podrán procesar los archivos gnuplot que contienen los gráficos y se generará
+el PDF final. Yo suelo ejecutarlo dos veces porque LaTex necesita muchas veces
+dos compilaciones para crear la tabla de contenido y los enlaces internos.
 
-2. El segundo método es el que yo utilizo. He creado
+## Convertir el archivos LaTex a PDF manualmente
+
+1. Procesar gráficos de gnuplot:
+
+```
+$ gnuplot *.gnuplot
+```
+
+2. Para procesar el documento LaTex principal he creado
 en el directorio de trabajo local de este repositorio un directorio
-llamado `aux` donde vuelco los archivos temporales y el PDF final que
-genera pdflatex, así pues desde el terminal:
+llamado `aux` donde vuelco los archivos temporales
 
 ```
-$ clear && pdflatex --output-directory=aux FF3_2015_Resuelto.tex
+$ md aux
 ```
 
-Recuerda que en el directorio `aux` quedará el PDF final para distibuir.
+aquí se volcarán todos los ficheros temporales de LaTex
+y también el PDF final que genera pdflatex, así pues desde el terminal:
+
+```
+$ pdflatex --output-directory=aux FF3_2015_Resuelto.tex
+```
+
+*Recuerda que en el directorio `aux` quedará el PDF final para distibuir*
