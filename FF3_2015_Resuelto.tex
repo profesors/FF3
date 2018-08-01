@@ -9,7 +9,12 @@
 \usepackage{enumitem}
 \usepackage[titles]{tocloft}                        % Cambiar anchura título en el índice
 \usepackage{siunitx} \sisetup{ output-decimal-marker={,}, quotient-mode=fraction}   % Sistema internacional para unidades con separador decimal
-\usepackage[a4paper]{geometry}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top = 2cm,
+    bottom = 2cm
+}
 \protected\def\vectori{\ensuremath{\overrightarrow{i}}}
 \protected\def\vectorj{\ensuremath{\overrightarrow{j}}}
 \protected\def\vectork{\ensuremath{\overrightarrow{k}}}
@@ -20,7 +25,7 @@
 \setlength{\cftsecnumwidth}{2em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
 \setlength{\cftsubsecnumwidth}{6em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
 \setlength{\cftsubsecindent}{3em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
-\usepackage{placeins}
+\usepackage{placeins}           % Para que los gráficos no se vayan a la siguiente sección
 
 
 
@@ -341,18 +346,16 @@
 
     $$r = \sqrt[5]{\frac{6B}{k e^2}} = \sqrt[5]{\frac{6\cdot 10^{-78}}{\num{8.99d9} e^2}} = \SI{1.21d-10}{m} = \SI{1.21}{\angstrom}$$
 
-    El resultado lo podemos ver en el gráfico \ref{gr:molecula_diatomica}
+    El resultado lo podemos ver en la figura 1 \ref{gr:molecula_diatomica}
 
     \begin{figure}[ht]
      %\fontsize{6}{12}\selectfont
       \centering
       \caption{Distancia entre núcleos} \label{gr:molecula_diatomica}
-      %\makebox[\textwidth]{\scalebox{0.5}{\input{grafico1}}}
-        %\include{grafico1}
         \fontsize{8}{12}\selectfont
-        \resizebox{0.9\textwidth}{!}{\input{grafico1}}
+        \resizebox{1\textwidth}{!}{\input{grafMoleculaDiatomica}}
     \end{figure}
-    \FloatBarrier
+    \FloatBarrier   % Para que el gráfico no se vaya a la siguiente sección
 
     % Feb 2ª Ejercicio 3    ==========================================
     \subsection{Función de onda rebelde}
