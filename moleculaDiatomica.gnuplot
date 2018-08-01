@@ -24,6 +24,6 @@ set yzeroaxis lt 1 lc rgb "black" lw 1.5
 set key font ",24"
 #set object 1 ellipse at 1.21e-10,U(1.21e-10) size screen 0.0175,0.025 front fc rgb "blue" fillstyle solid 1.0
 set object 1 ellipse at 1.21e-10,U(1.21e-10) size screen 0.025/2,0.025/2 front fc rgb "blue" fillstyle solid 1.0
-set label 1 "Radio de equilibrio" at 0.05e-10,U(1.21e-10)-1 left front font ",12"
+set label 1 "Radio de equilibrio 1,21 Å" at 0.05e-10,U(1.21e-10)-1 left front font ",12"
 set arrow 1 from 0,U(1.21e-10) to 1.21e-10,U(1.21e-10) heads filled front lc rgb "#191970" lw 3
 plot [0:6e-10][-12:12] U(r) lw 7 lc rgb "orange"
