@@ -18,8 +18,11 @@
 %\hypersetup{hidelinks=true}
 \usepackage{tocloft}
 \setlength{\cftsecnumwidth}{2em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
-\setlength{\cftsubsecnumwidth}{5em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
+\setlength{\cftsubsecnumwidth}{6em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
 \setlength{\cftsubsecindent}{3em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
+\usepackage{placeins}
+
+
 
 
 \title{Fundamentos de Física III \\ Soluciones exámenes curso 2015-2016}
@@ -47,8 +50,8 @@
   pdfpagemode=UseOutlines
 }
 
-\renewcommand{\thesection}{\Roman{section}}
-\renewcommand{\thesubsection}{Ejercicio \arabic{subsection}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{Ejercicio \arabic{section}.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\alph{subsubsection}}
 
 \pagestyle{fancy}           % Cabecera de cada página
@@ -81,7 +84,8 @@
 
         Preparando esta asignatura nos dimos cuenta de que no estaban disponibles todos los
         exámenes resueltos, de tal manera que tomando el consejo del divulgador
-        Javier Santaolalla\footnote{\href{https://twitter.com/jasantaolalla}{@JaSantaolalla}} nos lanzamos en grupo a resolver los exámenes que tienes
+        Javier Santaolalla\footnote{\href{https://twitter.com/jasantaolalla}{@JaSantaolalla}}
+        para preparar exámenes nos lanzamos a resolver los problemas que tienes
         en tus manos. Sean estas páginas las estrellas que te guíen en tu viaje
         hacia el éxito en tus estudios.
     \end{abstract}
@@ -321,10 +325,34 @@
 
     $$U=-\left(\frac{1}{4\pi\epsilon_0}\right)\frac{e^2}{r}+\frac{B}{r^6}$$
 
-    con $B=\SI{1.0d-78}{\J\meter^6}$ donde $r$ es la distancia entre los centros de los dos átomos.
+    con $B=\SI{1.0d-78}{\J\cdot\meter^6}$ donde $r$ es la distancia entre los centros de los dos átomos.
     Determine la separación de equilibrio esperada de los dos átomos (longitud de enlace de la molécula).
 
+    \paragraph{\textbf{Solución}}
+    \paragraph{} En el punto de separación de equilibrio la función alcanza el valor más bajo de su energía
+    potencial. Dicho mínimo puede ser obtenido calculando un mínimo de la gráfico. Para ello
+    calcularemos su primera derivada y la igualaremos a cero.
 
+    Por simplificar, sea $k = \frac{1}{4\pi \epsilon_0}$
+
+    $$\frac{dU}{dr} = 0 = \frac{k e^2}{r^2}-\frac{6 B}{r^7}$$
+
+    Si despejamos r obtenemos:
+
+    $$r = \sqrt[5]{\frac{6B}{k e^2}} = \sqrt[5]{\frac{6\cdot 10^{-78}}{\num{8.99d9} e^2}} = \SI{1.21d-10}{m} = \SI{1.21}{\angstrom}$$
+
+    El resultado lo podemos ver en el gráfico \ref{gr:molecula_diatomica}
+
+    \begin{figure}[ht]
+     %\fontsize{6}{12}\selectfont
+      \centering
+      \caption{Distancia entre núcleos} \label{gr:molecula_diatomica}
+      %\makebox[\textwidth]{\scalebox{0.5}{\input{grafico1}}}
+        %\include{grafico1}
+        \fontsize{8}{12}\selectfont
+        \resizebox{0.9\textwidth}{!}{\input{grafico1}}
+    \end{figure}
+    \FloatBarrier
 
     % Feb 2ª Ejercicio 3    ==========================================
     \subsection{Función de onda rebelde}
@@ -336,6 +364,7 @@
     donde r es la coordenada radial, $a=a_0/Z$ y $a_0\simeq\SI{0.5}{\angstrom}$ es el radio de Bohr
     (la carga del núcleo $Z_e$ y el átomo solo incluye un electrón). Si el número total de
     nucleones es $A=173$ y el número atómico es $Z=70$:
+
     \begin{enumerate}[label=\alph*)]
         \item ¿Cuál es la probabilidad de que el electrón esté en el núcleo?
         \item Exprese el resultado anterior en función del número total de nucleones A.
@@ -343,6 +372,7 @@
     \end{enumerate}
     \textbf{Ayuda:} A la hora de calcular la integral, realice una aproximación teniendo en cuenta
     que $R\ll\alpha$ en el interior del núcleo ($R$ es el radio del núcleo).
+
 
 
     % Examen Sept  2016 =============================================
