@@ -27,6 +27,7 @@
 \setlength{\cftsubsecnumwidth}{6em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
 \setlength{\cftsubsecindent}{3em} %   Mover el margen de los puntos (dots) en el TOC cfrXnumwidth donde X es subsec, pero también podría ser "sec", o "chap"
 \usepackage{placeins}           % Para que los gráficos no se vayan a la siguiente sección
+\usepackage{cancel}
 
 
 
@@ -59,7 +60,8 @@
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\thesubsection}{Ejercicio \arabic{section}.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\alph{subsubsection}}
-\renewcommand{\spanishabstractname}{Prefacio}
+\renewcommand{\spanishabstractname}{Prólogo}
+\renewcommand{\spanishfigurename}{Gráfico}
 
 \pagestyle{fancy}           % Cabecera de cada página
 \fancyhf{}
@@ -356,14 +358,14 @@
     \FloatBarrier   % Para que el gráfico no se vaya a la siguiente sección
 
     % Feb 2ª Ejercicio 3    ==========================================
-    \subsection{Función de onda rebelde}
+    \subsection{Electrón rebelde en el núcleo}
     La función de onda de un electrón en un átomo de tipo hidrógeno en el estado fundamental
     expresada en coordenadas esféricas es:
 
     $$\psi(r)=\frac{1}{\sqrt{\pi a^3}}e^{-r/a}$$
 
-    donde r es la coordenada radial, $a=a_0/Z$ y $a_0\simeq\SI{0.5}{\angstrom}$ es el radio de Bohr
-    (la carga del núcleo $Z_e$ y el átomo solo incluye un electrón). Si el número total de
+    \noindent donde r es la coordenada radial, $a=a_0/Z$ y $a_0\simeq\SI{0.5}{\angstrom}$ es el radio de Bohr
+    (la carga del núcleo $Z \cdot e$ y el átomo solo incluye un electrón). Si el número total de
     nucleones es $A=173$ y el número atómico es $Z=70$:
 
     \begin{enumerate}[label=\alph*)]
@@ -372,7 +374,93 @@
         \item Sustituya valores y obtenga el valor numérico de esta propiedad.
     \end{enumerate}
     \textbf{Ayuda:} A la hora de calcular la integral, realice una aproximación teniendo en cuenta
-    que $R\ll\alpha$ en el interior del núcleo ($R$ es el radio del núcleo).
+    que $R\ll a$ en el interior del núcleo ($R$ es el radio del núcleo).
+
+    \paragraph{\textbf{Solución}}
+
+    \paragraph{} El tamaño de un núcleo atómico suele ser del orden de $10^{-15}$ metros,
+    en nuestro caso partícular partícular:
+
+    \begin{equation}    \label{eq:radio_nucleo_atomico}
+        R=r_0 \cdot A^{1/3} = \num{1.25d-15} \cdot 173^{1/3} = \SI{6.9650d-15}{\meter}
+    \end{equation}
+
+    Por otra parte, según el enunciado
+    \begin{equation}    \label{eq:calcula_de_a}
+        a = \frac{a}{Z} = \frac{\num{0.5d-10}}{70} = \SI{7.1428d-13}{\meter}
+    \end{equation}
+
+    Una vez obtenidos estos datos pasamos a desarrollar el problema
+
+    \paragraph{a)} La probabilidad de que un electrón esté en el núcleo es a priori prácticamente
+    nula. La fórmula para saber la probabilida a la que se encuentra del centro, a una distancia
+    radial $r$ del centro es
+
+    $$P(r) = 4\pi r^2 {\mid \psi(r) \mid}^2$$
+
+    Así, pues, la probabilidad de que se encuentre en algún punto comprendido entre $r=0$ y $r=R$
+    donde $R$ es el radio del núcleo puede calcularse así:
+
+    $$P = \int_{0}^{R} 4\pi r^2 {\mid \psi(r) \mid}^2 dr = \int_{0}^{R} 4\cancel{\pi} r^2 \frac{1}{\cancel{\pi} a^3} e^{-\frac{2}{a}r} dr =
+        \frac{4}{a^3} \int_{0}^{R} r^2\cdot e^{-\frac{2}{a}r} dr$$
+
+    \paragraph{El mundo es de los valientes} Resulta tentador hacer uso de la calculadora para resolver esta integral sustituyendo
+    con los valores obtenidos en las ecuaciones \ref{eq:radio_nucleo_atomico} y \ref{eq:calcula_de_a}. En caso de proceder
+    de esta manera obtenemos el resultado \num{1.2183d-6}. No obstante, vamos a desarrollar la integral. Tenga el lector
+    el valor suficiente como para acompañarnos bien pertechado con una buena dosis de café si fuera necesario. Recuerde
+    el lector que el símbolo matemático $\therefore$ significa por lo tanto.
+
+    \paragraph{} Aplicamos la integración por partes, así pues
+
+    $$u=r^2 \therefore du=2r dr$$
+    $$dv = e^{-\frac{2}{a}r} \therefore v=-\frac{a}{2}e^{-\frac{2}{a}r}$$
+
+    Obtenemos
+
+    $$-\frac{a}{2}R^2 e^{-\frac{2}{a}R} + a \int_{0}^{R} r e^{-{\frac{2}{a}r}} dr $$
+
+    Volvemos a aplicar integración por partes una segunda vez
+
+    $$u=r \therefore du=dr$$
+    $$dv = e^{-\frac{2}{a}r} \therefore v=-\frac{a}{2}e^{-\frac{2}{a}r}$$
+
+    Y obtenemos
+
+    $$-\frac{a}{2}R^2e^{-\frac{2}{a}R}+a\left(-\frac{a}{2}Re^{-\frac{2}{a}R}+\frac{a}{2}\int_{0}^{R}e^{-\frac{2}{a}r} dr\right) =$$
+    $$-\frac{a}{2}R^2e^{-\frac{2}{a}R}-\frac{a^2}{2}Re^{-\frac{2}{a}R}+\frac{a^2}{2}\left(-\frac{a}{2}e^{-\frac{2}{a}R}+\frac{a}{2}e^0 \right)=$$
+    $$-\frac{a}{2}R^2e^{-\frac{2}{a}R} - \frac{a^2}{2}Re^{-\frac{2}{a}R}-\frac{a^3}{4}e^{-\frac{2}{a}R}+\frac{a^3}{4} =$$
+    $$\frac{4}{a^3}\left[e^{-\frac{2}{a}R}\left(-\frac{a}{2}R^2-\frac{a^2}{2}R-\frac{a^3}{4}\right)+\frac{a^3}{4}\right]$$
+
+    Si sustituimos en este resultado por los valores de las ecuaciones \ref{eq:radio_nucleo_atomico} y \ref{eq:calcula_de_a}
+    volvemos a obtener el resultado \num{1.2183d-6}, como obtuvimos con la calculadora.
+    %$$\int_{0}{R} r^2 \cdot e^{-\frac{2}{a}r} dr$$
+
+    \paragraph{b)} Nos piden el anterior resultado en función del número total de nucleones $A$, esto es, descomponer $R$ según
+    la fórmula $R=r_0 A^{1/3}$ quedando así
+
+    $$\frac{4}{a^3}\left[e^{-\frac{2}{a}r_0 A^{1/3}}\left(-\frac{a}{2}{(r_0 A^{1/3})}^2-\frac{a^2}{2}r_0 A^{1/3}-\frac{a^3}{4}\right)+\frac{a^3}{4}\right]$$
+
+    \paragraph{c)} En este útlimo apartado nos piden que realicemos la sustitución por valores numéricos. Recordemos que obteníamos
+    el valor de $R=\SI{6.9650d-15}{\meter}$ de la ecuación \ref{eq:radio_nucleo_atomico} y el de $a=\SI{7.1428d-13}{\meter}$ de la
+    ecuación \label{eq:calcula_de_a}, por otra parte los valores $r_0$ y $A$ están indicados en el enunciado.
+
+    \paragraph{} El resultado obtenido indica que la probabilidad de encontrar el electrón en el núcleo es infinitesimal tal
+    y como habíamos previsto al principio. Dicho cálculo se realizó en el primer apartado del ejercicio y obtuvimos como
+    resultado $\num{1.2183d-6}$.
+
+    El resultado lo podemos ver en el gráfico \ref{gr:probabilidad_radio_electron}
+
+    \begin{figure}[ht]
+      \centering
+      \caption{Probabilidad de encontrar el electrón en una posición concreta} \label{gr:probabilidad_radio_electron}
+        \fontsize{8}{12}\selectfont
+        \resizebox{1\textwidth}{!}{\input{grafProbabilidadRadioElectron}}
+    \end{figure}
+    \FloatBarrier   % Para que el gráfico no se vaya a la siguiente sección
+
+
+    % TODO
+
 
 
 
@@ -391,7 +479,7 @@
 
     % Sept 2016 Ejercicio 2    ==========================================
     \subsection{Electrones apantallados}
-    Los electrónes más externos de un átomo detectan un núcleo protegido o "apantallado"
+    Los electrónes más externos de un átomo detectan un núcleo protegido o apantallado
     debido a la influencia de los electrónes intermedios. La atracción del núcleo se modela
     entonces usando un átomo de tipo hidrógeno con número atómico efectivo $Z'$. Sea entonces
     un electrón externo del átomo de sodio que ocupa el nivel atómico 3s y cuya energía
@@ -423,9 +511,51 @@
     % Sept 2016 Ejercicio 4    ==========================================
     \subsection{Procesos de desintegración}
     De los dos procesos de desintegración siguientes, decida cuál es posible y por qué
-    (tenga en cuenta carga, número léptonico y número bariónico). Especifique a través
+    (tenga en cuenta carga, número leptónico y número bariónico). Especifique a través
     de qué interacción se produce ese proceso.
     $$\Sigma^{-} \rightarrow \pi^{-} + \eta;   \quad \quad \Sigma^{-} \rightarrow \pi^{-} + p$$
+
+    \paragraph{\textbf{Solución}}
+
+    \paragraph{}
+
+    \begin{center}
+    \begin{tabular}{ c c c c c }
+      \hline
+      \textbf{Primer proceso} & $\Sigma^{-}$ & $\pi^{-}$ & $\eta$ & cumple \\
+      \hline
+      carga & -1 & -1 & 0 & sí \\
+      nº leptónico & 0 & 0 & 0 & sí \\
+      nº bariónico & +1 & 0 & 0 & no \\
+      extrañeza & -1 & 0 & 0 & no \\
+      \hline
+    \end{tabular}
+    \end{center}
+
+    \vspace{0.2cm}
+
+
+    \begin{center}
+    \begin{tabular}{ c c c c c }
+      \hline
+      \textbf{Segundo proceso} & $\Sigma^{-}$ & $\pi^{-}$ & $p$ & cumple \\
+      \hline
+      carga & -1 & -1 & +1 & no \\
+      nº leptónico & 0 & 0 & 0 & sí \\
+      nº bariónico & +1 & 0 & +1 & sí \\
+      extrañeza & -1 & 0 & 0 & no \\
+      \hline
+    \end{tabular}
+    \end{center}
+
+    \raggedright
+    \paragraph{Interacción} De las cuatro interacciones posibles las dos candidatas son la fuerza nuclear
+    fuerte y la débil. Si la extrañeza se conserva será la primera de las dos, y si no se conserva
+    será la segunda.
+
+    \paragraph{} En este caso vemos que se trata de la fuerza nuclear débil ya que no se conserva la extrañeza
+    en ninguno de los dos casos.
+
 
 
 \end{document}

@@ -1,9 +1,8 @@
 # gnuplot
+reset
 set encoding utf8
 set terminal epslatex size 14cm,9cm color
-#set size 1.0
 set output 'grafMoleculaDiatomica.tex'
-#set title "Distancia entre los núcleos de los átomos" font ",24"
 k = 8.99e9
 e = 1.6e-19
 B = 1e-78
