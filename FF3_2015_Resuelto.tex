@@ -386,7 +386,7 @@
     \end{equation}
 
     Por otra parte, según el enunciado
-    \begin{equation}    \label{eq:calcula_de_a}
+    \begin{equation}\label{eq:calculo_de_a}
         a = \frac{a}{Z} = \frac{\num{0.5d-10}}{70} = \SI{7.1428d-13}{\meter}
     \end{equation}
 
@@ -405,7 +405,7 @@
         \frac{4}{a^3} \int_{0}^{R} r^2\cdot e^{-\frac{2}{a}r} dr$$
 
     \paragraph{El mundo es de los valientes} Resulta tentador hacer uso de la calculadora para resolver esta integral sustituyendo
-    con los valores obtenidos en las ecuaciones \ref{eq:radio_nucleo_atomico} y \ref{eq:calcula_de_a}. En caso de proceder
+    con los valores obtenidos en las ecuaciones \ref{eq:radio_nucleo_atomico} y \ref{eq:calculo_de_a}. En caso de proceder
     de esta manera obtenemos el resultado \num{1.2183d-6}. No obstante, vamos a desarrollar la integral. Tenga el lector
     el valor suficiente como para acompañarnos bien pertechado con una buena dosis de café si fuera necesario. Recuerde
     el lector que el símbolo matemático $\therefore$ significa por lo tanto.
@@ -431,7 +431,7 @@
     $$-\frac{a}{2}R^2e^{-\frac{2}{a}R} - \frac{a^2}{2}Re^{-\frac{2}{a}R}-\frac{a^3}{4}e^{-\frac{2}{a}R}+\frac{a^3}{4} =$$
     $$\frac{4}{a^3}\left[e^{-\frac{2}{a}R}\left(-\frac{a}{2}R^2-\frac{a^2}{2}R-\frac{a^3}{4}\right)+\frac{a^3}{4}\right]$$
 
-    Si sustituimos en este resultado por los valores de las ecuaciones \ref{eq:radio_nucleo_atomico} y \ref{eq:calcula_de_a}
+    Si sustituimos en este resultado por los valores de las ecuaciones \ref{eq:radio_nucleo_atomico} y \ref{eq:calculo_de_a}
     volvemos a obtener el resultado \num{1.2183d-6}, como obtuvimos con la calculadora.
     %$$\int_{0}{R} r^2 \cdot e^{-\frac{2}{a}r} dr$$
 
@@ -442,13 +442,13 @@
 
     \paragraph{c)} En este útlimo apartado nos piden que realicemos la sustitución por valores numéricos. Recordemos que obteníamos
     el valor de $R=\SI{6.9650d-15}{\meter}$ de la ecuación \ref{eq:radio_nucleo_atomico} y el de $a=\SI{7.1428d-13}{\meter}$ de la
-    ecuación \label{eq:calcula_de_a}, por otra parte los valores $r_0$ y $A$ están indicados en el enunciado.
+    ecuación \ref{eq:calculo_de_a}, por otra parte los valores $r_0$ y $A$ están indicados en el enunciado.
 
     \paragraph{} El resultado obtenido indica que la probabilidad de encontrar el electrón en el núcleo es infinitesimal tal
     y como habíamos previsto al principio. Dicho cálculo se realizó en el primer apartado del ejercicio y obtuvimos como
     resultado $\num{1.2183d-6}$.
 
-    El resultado lo podemos ver en el gráfico \ref{gr:probabilidad_radio_electron}
+    \paragraph{} El resultado lo podemos ver en el gráfico \ref{gr:probabilidad_radio_electron}
 
     \begin{figure}[ht]
       \centering
@@ -457,11 +457,6 @@
         \resizebox{1\textwidth}{!}{\input{grafProbabilidadRadioElectron}}
     \end{figure}
     \FloatBarrier   % Para que el gráfico no se vaya a la siguiente sección
-
-
-    % TODO
-
-
 
 
     % Examen Sept  2016 =============================================
@@ -477,6 +472,8 @@
     $A$ y $L$ son constantes. Determine la energía potencial $U(x)$ de la partícula.
 
 
+
+
     % Sept 2016 Ejercicio 2    ==========================================
     \subsection{Electrones apantallados}
     Los electrónes más externos de un átomo detectan un núcleo protegido o apantallado
@@ -484,6 +481,29 @@
     entonces usando un átomo de tipo hidrógeno con número atómico efectivo $Z'$. Sea entonces
     un electrón externo del átomo de sodio que ocupa el nivel atómico 3s y cuya energía
     de ionización es \SI{5.14}{\electronvolt}. Obtenga el valor de $Z'$ para ese electrón del sodio.
+
+    \paragraph{\textbf{Solución}}
+
+    \paragraph{} La configuración electrónica $3s$ indica que $n=3$, pero un electrón apantallado se comporta
+    parcialmente como si $Z=1$ es decir, como si en el núcleo solo hubiese una carga positiva. Calculamos
+    la energía de dicho electrón apantallado en su estado fundamental
+
+    $$E_n = \frac{E_0}{n^2} = \frac{\num{13.6}}{3^2} = \SI{1.51}{\electronvolt}$$
+
+    Esta energía debería de ser \SI{5.14}{\electronvolt} según el enunciado, es decir,
+    su apantallamiento incrementa la energía de ionización real. Este hecho sirve
+    para calcular la carga cuclear efectiva $Z'$. En primer lugar calculamos la
+    energía que debería tener un electrón cuyo $Z = Z'$, teniendo en cuenta la relación
+    $r_{electr\acute{o}n} = n^2 a_0$ para poder sustituir en el segundo paso:
+
+    $$E=-\frac{1}{2}\frac{kZ'e^2}{r} = -\frac{1}{2}\frac{k Z' e^2}{9 \cdot a_0} = \frac{Z'}{9}\cdot \frac{k e^2}{2 a_0}=
+    \frac{Z'}{9}\cdot \SI{13.6}{\electronvolt}$$
+
+
+
+    Despejando $Z'$ llegamos a la conclusión final
+
+    $$Z'=\frac{9 \cdot E_{ionizaci\acute{o}n}}{\SI{13.6}{\electronvolt}} = \num{3.4}$$
 
     % Sept 2016 Ejercicio 3    ==========================================
     \subsection{Indio}
