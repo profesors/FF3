@@ -14,7 +14,7 @@ P(r) = 4*pi*r**2*abs(phi(r))**2
 set samples 1000
 set dummy r
 set xlabel "Distancia radial [m]" font "Times-Roman,18"
-set ylabel "Probabilidad" font "Times-Roman,18"
+set ylabel "Densidad de probabilidad" font "Times-Roman,18"
 set xtics font "Times-Roman, 12"
 unset ytics
 unset border
