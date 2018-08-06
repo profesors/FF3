@@ -60,7 +60,7 @@
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\thesubsection}{Ejercicio \arabic{section}.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\alph{subsubsection}}
-\renewcommand{\spanishabstractname}{Prólogo}
+\renewcommand{\spanishabstractname}{Preámbulo}
 \renewcommand{\spanishfigurename}{Gráfico}
 
 \pagestyle{fancy}           % Cabecera de cada página
@@ -82,11 +82,11 @@
 
     \vspace{1cm}
     \begin{abstract}
-        Uno de los problemas a los que nos enfrentamos los alumnos universitarios
+        Uno de los problemas a los que nos enfrentamos los estudiantes universitarios
         en general y de la UNED en particular es la de conseguir exámenes resueltos
         que nos permitan orientarnos en la titánica tarea de preparar una asignatura.
 
-        La cantidad de temario y de ejercicios que la bibliografía básica ofrece es
+        La cantidad de temario y de ejercicios que la bibliografía básica ofrece resulta ser
         virtualmente imposible de abarcar en un cuatrimestre teniendo así el alumno
         la misión de encontrar un faro que ilumine su camino en la búsqueda del modelo
         de examen al que se enfrentará.
@@ -470,6 +470,36 @@
 
     $$\psi(x)=Axe^{-x^2/L^2}$$
     $A$ y $L$ son constantes. Determine la energía potencial $U(x)$ de la partícula.
+
+    \paragraph{\textbf{Solución}}
+
+    \paragraph{} Usaremos la ecuación de Schrödinger independiente en el tiempo
+
+    \begin{equation}    \label{eq:schrodinger}
+        -\frac{\hbar^2}{2m}\cdot\frac{d^2(x)}{dx^2}+U(x)\psi(x)=E\psi(x)
+    \end{equation}
+
+
+    Para resolver esta ecuación debemos en primer lugar resolver la segunda derivada de $\psi(x)$
+
+    $$\frac{d\psi(x)}{dx} = A e^{-\frac{x^2}{L^2}}-\frac{2}{L^2} A x^2 e^{-\frac{x^2}{L^2}} = A e^{-\frac{x^2}{L^2}}\left(1-\frac{2}{L^2}x^2\right)$$
+
+    $$\frac{d^2\psi(x)}{dx^2} = -\frac{2}{L^2}xAe^{-\frac{x^2}{L^2}}\left(1-\frac{2}{L^2}x^2\right)+A e^{-\frac{x^2}{L^2}}\left(-\frac{4}{L^2}x\right) =
+        \frac{Ae^{-\frac{x^2}{L^2}}}{L^2}x(4x^2-6)$$
+
+    Sustituyendo este resultado en la ecuación \ref{eq:schrodinger} y teniendo en cuenta que según el enunciado la energía es nula\footnote{Nota
+    del autor: Por favor, si alguién descubre algún error en este ejercicio, ruego nos lo comunique para que los demás estudiantes
+    que empleen el documento no lleguen a error}
+
+    $$-\frac{\hbar^2}{2m}\cdot\frac{A e^{-\frac{x^2}{L^2}}}{L^2} x (4x^2-6) + U(x) A x e^{-\frac{x^2}{L^2}} = 0$$
+
+    Finalmente simplificamos la ecuación\footnote{Basta sacar factor común y llevárselo al segundo miembro
+    para que se anule y desaparezca de la ecuación}
+    y despejamos la energía potencial $U(x)$ para obtener el resultado buscado
+
+    $$U(x)=\frac{\hbar^2}{2m}\cdot\frac{4x^2-6}{L^2}$$
+
+
 
 
 
