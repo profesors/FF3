@@ -1,26 +1,25 @@
 #
 GNUPLOT = gnuplot
 PDFLATEX = pdflatex
-OUTPUT_DIRECTORY = output
+AUX_DIRECTORY = tmp
 ALL_GNUPLOT_FILES = moleculaDiatomica probabilidadRadioElectron
 
-all: clean graficos latex clean_at_the_end
+all: directorio clean graficos latex clean_at_the_end
 
+directorio:
+	@mkdir -p $(AUX_DIRECTORY)
 
-latex: graficos FF3_2014_2015_Resuelto.tex
-	$(PDFLATEX) --output-directory=$(OUTPUT_DIRECTORY) FF3_2014_2015_Resuelto.tex
-	$(PDFLATEX) --output-directory=$(OUTPUT_DIRECTORY) FF3_2014_2015_Resuelto.tex
-	mv $(OUTPUT_DIRECTORY)/FF3_2014_2015_Resuelto.pdf .
+clean:
+	rm -f *.eps *.pdf graf* $(AUX_DIRECTORY)/*
 
 graficos: moleculaDiatomica.gnuplot probabilidadRadioElectron.gnuplot
 	$(GNUPLOT) $?
 
-
-clean:
-	rm -f *.eps *.pdf
-	rm -f graf*
-	rm -f $(OUTPUT_DIRECTORY)/*
+latex: graficos FF3_2014_2015_Resuelto.tex
+	@$(PDFLATEX) --output-directory=$(AUX_DIRECTORY) FF3_2014_2015_Resuelto.tex
+	@$(PDFLATEX) --output-directory=$(AUX_DIRECTORY) FF3_2014_2015_Resuelto.tex
+	@mv $(AUX_DIRECTORY)/FF3_2014_2015_Resuelto.pdf .
 
 clean_at_the_end:
-	rm -f *.eps
-	rm -f graf*
+	rm -f *.eps graf*	
+	rm -Rf $(AUX_DIRECTORY)

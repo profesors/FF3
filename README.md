@@ -6,7 +6,7 @@ Soluciones de los exámenes de Fundamentos de Física 3 de la UNED
 Simplemente ejecuta desde el terminal:
 
 ```
-$ ./make
+$ make
 ```
 
 Así se podrán procesar los archivos gnuplot que contienen los gráficos y se generará
@@ -23,10 +23,10 @@ $ gnuplot *.gnuplot
 
 2. Para procesar el documento LaTex principal he creado
 en el directorio de trabajo local de este repositorio un directorio
-llamado `aux` donde vuelco los archivos temporales
+llamado `output` donde vuelco los archivos temporales
 
 ```
-$ md aux
+$ md output
 ```
 
 aquí se volcarán todos los ficheros temporales de LaTex
