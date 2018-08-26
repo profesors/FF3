@@ -1,7 +1,7 @@
 # gnuplot
 reset
 set encoding utf8
-#set terminal epslatex size 14cm,9cm color
+set terminal epslatex size 14cm,9cm color
 set output 'grafProbabilidadRadioElectron.tex'
 a0 = 0.5e-10
 Z = 70
