@@ -2,7 +2,6 @@
 GNUPLOT = gnuplot
 PDFLATEX = pdflatex
 AUX_DIRECTORY = tmp
-ALL_GNUPLOT_FILES = moleculaDiatomica probabilidadRadioElectron
 
 all: directorio clean graficos latex clean_at_the_end
 
@@ -21,5 +20,5 @@ latex: graficos FF3_2014_2015_Resuelto.tex
 	@mv $(AUX_DIRECTORY)/FF3_2014_2015_Resuelto.pdf .
 
 clean_at_the_end:
-	rm -f *.eps graf*	
+	rm -f *.eps graf*
 	rm -Rf $(AUX_DIRECTORY)
