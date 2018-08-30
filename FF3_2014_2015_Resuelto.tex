@@ -479,22 +479,21 @@
 
     Para resolver esta ecuación debemos en primer lugar resolver la segunda derivada de $\psi(x)$
 
-    $$\frac{d\psi(x)}{dx} = A e^{-\frac{x^2}{L^2}}-\frac{2}{L^2} A x^2 e^{-\frac{x^2}{L^2}} = A e^{-\frac{x^2}{L^2}}\left(1-\frac{2}{L^2}x^2\right)$$
+    $$\frac{d\psi(x)}{dx} = A e^{-x^2/L^2}-\frac{2}{L^2} A x^2 e^{-x^2/L^2} = A e^{-x^2/L^2}\left(1-\frac{2}{L^2}x^2\right)$$
 
-    $$\frac{d^2\psi(x)}{dx^2} = -\frac{2}{L^2}xAe^{-\frac{x^2}{L^2}}\left(1-\frac{2}{L^2}x^2\right)+A e^{-\frac{x^2}{L^2}}\left(-\frac{4}{L^2}x\right) =
-        \frac{Ae^{-\frac{x^2}{L^2}}}{L^2}x(4x^2-6)$$
+    $$\frac{d^2\psi(x)}{dx^2} = A \frac{-2x}{L^2}e^{-x^2/L^2}\left(1-\frac{2x^2}{L^2}\right)+
+		Ae^{-x^2/L^2}\left(0-\frac{4x}{L^2}\right) =
+		A e^{-x^2/L^2} \left(\frac{4x^3}{L^4}-\frac{6x}{L^2}\right)$$
 
-    Sustituyendo este resultado en la ecuación \ref{eq:schrodinger} y teniendo en cuenta que según el enunciado la energía es nula\footnote{Nota
-    del autor: Por favor, si alguién descubre algún error en este ejercicio, ruego nos lo comunique para que los demás estudiantes
-    que empleen el documento no lleguen a error}
+    Sustituyendo este resultado en la ecuación \ref{eq:schrodinger} y teniendo en cuenta que según el enunciado la energía es nula
 
-    $$-\frac{\hbar^2}{2m}\cdot\frac{A e^{-\frac{x^2}{L^2}}}{L^2} x (4x^2-6) + U(x) A x e^{-\frac{x^2}{L^2}} = 0$$
+    $$-\frac{\hbar^2}{2m}\cdot A e^{-x^2/L^2} \left(\frac{4x^3}{L^4}-\frac{6x}{L^2}\right) + U(x) A x e^{-x^2/L^2} = 0$$
 
-    Finalmente simplificamos la ecuación\footnote{Basta sacar factor común y llevárselo al segundo miembro
+    Finalmente simplificamos esta ecuación\footnote{Basta sacar factor común y llevárselo al segundo miembro
     para que se anule y desaparezca de la ecuación}
     y despejamos la energía potencial $U(x)$ para obtener el resultado buscado
 
-    $$U(x)=\frac{\hbar^2}{2m}\cdot\frac{4x^2-6}{L^2}$$
+    $$U(x)=\frac{\hbar^2}{2m} \left(\frac{4x^2}{L^4}-\frac{6}{L^2}\right)$$
 
 
 

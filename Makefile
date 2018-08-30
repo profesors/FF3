@@ -14,7 +14,7 @@ clean:
 graficos: moleculaDiatomica.gnuplot probabilidadRadioElectron.gnuplot
 	$(GNUPLOT) $?
 
-latex: graficos FF3_2014_2015_Resuelto.tex
+latex: directorio graficos FF3_2014_2015_Resuelto.tex
 	@$(PDFLATEX) --output-directory=$(AUX_DIRECTORY) FF3_2014_2015_Resuelto.tex
 	@$(PDFLATEX) --output-directory=$(AUX_DIRECTORY) FF3_2014_2015_Resuelto.tex
 	@mv $(AUX_DIRECTORY)/FF3_2014_2015_Resuelto.pdf .
